@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  
+  .a{margin:0px auto;margin-top:50px;}
+  </style>
+</head>
+<body>
+
+<div class="container">
+<div class="col-sm-4 a">
+  <form action="code.php" method="POST" onsubmit="return demo()">
+  <div class="form-group">
+    <label for="email">Name:</label>
+    <input type="text" class="form-control" placeholder="Enter email" id="name1" name="name">
+  </div>
+    <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" placeholder="Enter email" id="email1" name="email">
+  </div>
+    <div class="form-group">
+    <label for="email">Mobile No. :</label>
+    <input type="number" class="form-control" placeholder="Enter email" id="mob1" name="mob">
+  </div>
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div></div>
+<script>
+function demo(){
+var name=document.getElementById("name1");
+var email=document.getElementById("email1");
+var mobile=document.getElementById("mob1");
+var comment=document.getElementById("comment");
+var npattern=/^[A-Za-z0-9 ]{3,}$/gm
+var epattern=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/gm
+var nmob=/^[6789]{1}[0-9]{9}$/gm
+if(npattern.test(name))
+{
+ name.style.border="5px solid green";
+
+}
+else
+{
+name.style.border="5px solid red";
+alert("name is required");
+return false;
+}
+if(epattern.test(email))
+{
+ email.style.border="5px solid green";
+
+}
+else
+{
+email.style.border="5px solid red";
+alert("email is required");
+return false;
+}
+
+if(nmob.test(mobile))
+{
+ mobile.style.border="5px solid green";
+
+}
+else
+{
+mobile.style.border="5px solid red";
+alert("number is required");
+return false;
+}
+return true;
+
+}
+</script>
+</body>
+</html>
